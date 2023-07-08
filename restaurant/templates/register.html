@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="{% static 'css/LoginRegisterPage/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="login__content">
+            <img src="{% static 'images/Restaurant Images/restaurantCusine.webp' %}" alt="login image"
+                class="login__img">
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; position: relative; width: 100%; height: 100%;">
+                <form method="POST" action="" class="login__form">
+                    {% csrf_token %}
+                    <div>
+                        <h1 class="login__title">
+                            <span>Welcome</span>
+                        </h1>
+                        <p class="login__description">
+                            Welcome! Please Register to continue
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="login__inputs">
+                            <div>
+                                <label for="" class="login__label">Username</label>
+                                <input type="text" placeholder="Enter your username" required class="login__input"
+                                    name="username">
+                                <!-- {{form.username}} -->
+                            </div>
+
+                            <div>
+                                <label for="" class="login__label">Email</label>
+                                <input type="text" placeholder="Enter your email" required class="login__input"
+                                    name="email">
+                                <!-- {{form.email}} -->
+                            </div>
+
+                            <div>
+                                <label for="" class="login__label">Password1</label>
+
+                                <div class="login__box">
+                                    <input type="password" placeholder="Enter your password" required
+                                        class="login__input" id="input-pass" name="password1">
+                                    <!-- {{form.password1}} -->
+                                    <i class="ri-eye-off-line login__eye" id="input-icon"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="" class="login__label">Password2</label>
+
+                                <div class="login__box">
+                                    <input type="password" placeholder="Enter your password for confirmation" required
+                                        class="login__input" id="input-pass" name="password2">
+                                    <!-- {{form.password2}} -->
+                                    <i class="ri-eye-off-line login__eye" id="input-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="login__check">
+                                        <input type="checkbox" class="login__check-input">
+                                        <label for="" class="login__check-label">Remember me</label>
+                                    </div> -->
+                    </div>
+
+                    <div>
+                        <div class="login__buttons">
+                            <!-- <button class="login__button">Log In</button> -->
+                            <input type="submit" class="login__button" value="Register Account">
+                        </div>
+
+                        <a href="#" class="login__forgot">Forgot Password?</a>
+                    </div>
+                </form>
+
+                <div class="login__form" style="position: relative; float: right;">
+                    <div>
+                        Already have an account? <a href="{% url 'login' %}" class="login__button"
+                            style="text-decoration: none;">Log In</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/LoginRegister/script.js' %}"></script>
+
+    <!-- <script>
+        /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+//We start indexing at one because CSRF_token is considered and input field 
+*/
+
+        //Query All input fields
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder = 'Username..';
+        form_fields[2].placeholder = 'Email..';
+        form_fields[3].placeholder = 'Enter password...';
+        form_fields[4].placeholder = 'Re-enter Password...';
+
+
+        for (var field in form_fields) {
+            form_fields[field].className += ' form-control'
+        }
+    </script> -->
+
+
+</body>
+
+</html>

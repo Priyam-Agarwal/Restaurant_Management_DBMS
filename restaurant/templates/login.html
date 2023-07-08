@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="{% static 'css/LoginRegisterPage/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="login__content">
+            <img src="{% static 'images/Restaurant Images/restaurantCusine.webp' %}" alt="login image"
+                class="login__img">
+
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; position: relative; width: 100%; height: 100%;">
+                <form method="POST" action="" class="login__form">
+                    {% csrf_token %}
+                    <div>
+                        <h1 class="login__title">
+                            <span>Welcome</span> Back
+                        </h1>
+                        <p class="login__description">
+                            Welcome! Please Login to continue
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="login__inputs">
+                            <div>
+                                <label for="" class="login__label">Username</label>
+                                <input type="text" placeholder="Enter your username" class="login__input"
+                                    name="username">
+                            </div>
+
+                            <div>
+                                <label for="" class="login__label">Password</label>
+
+                                <div class="login__box">
+                                    <input type="password" placeholder="Enter your password" class="login__input"
+                                        id="input-pass" name="password">
+                                    <i class="ri-eye-off-line login__eye" id="input-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="login__check">
+                                        <input type="checkbox" class="login__check-input">
+                                        <label for="" class="login__check-label">Remember me</label>
+                                    </div> -->
+                    </div>
+
+                    <div>
+                        <div class="login__buttons">
+                            <input type="submit" class="login__button" value="Log In">
+                            <!-- <button class="login__button">Log In</button> -->
+                        </div>
+
+                        <a href="#" class="login__forgot">Forgot Password?</a>
+                    </div>
+                </form>
+
+                <div class="login__form">
+                    <div>
+                        Don't have an account? <a href="{% url 'register' %}" class="login__button"
+                            style="text-decoration: none;">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/LoginRegister/script.js' %}"></script>
+
+</body>
+
+</html>
